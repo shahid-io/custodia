@@ -1,0 +1,25 @@
+[project]
+name = "custodia"
+version = "0.1.0"
+description = "Custodia: pharmaceutical supply-chain traceability service (DSCSA, EPCIS, 21 CFR Part 11)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "pydantic-settings",
+    "sqlalchemy[asyncio]",
+    "asyncpg",
+    "alembic",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
